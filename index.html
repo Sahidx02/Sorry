@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Letter For Archana</title>
+
+<!-- Google Analytics tracking -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family:'Poppins',sans-serif;
+    background: linear-gradient(135deg, #fff0d4, #ffe1a8);
+    overflow:hidden;
+}
+
+/* hearts animation */
+.heart{
+    position:absolute;
+    width:8px;
+    height:8px;
+    background: #fca5a5;
+    transform: rotate(45deg);
+    animation: float 8s linear infinite;
+    opacity:0.6;
+}
+.heart:before, .heart:after{
+    content:"";
+    position:absolute;
+    width:8px;
+    height:8px;
+    background:#fca5a5;
+    border-radius:50%;
+}
+.heart:before{top:-4px; left:0;}
+.heart:after{left:4px; top:0;}
+
+@keyframes float{
+    0% {transform: translateY(0) rotate(45deg); opacity:0.4;}
+    50% {opacity:0.7;}
+    100% {transform: translateY(-600px) rotate(45deg); opacity:0;}
+}
+
+/* Card */
+.paper{
+    background:#fffdf8;
+    max-width:750px;
+    width:90%;
+    max-height:90vh;
+    padding:50px;
+    border-radius:10px;
+    box-shadow:0 20px 50px rgba(0,0,0,0.12);
+    position:relative;
+    z-index:2;
+    overflow-y:auto;
+}
+
+.paper:before{
+    content:"";
+    position:absolute;
+    left:40px;
+    top:0;
+    bottom:0;
+    width:2px;
+    background:#fcb3b3;
+}
+
+h1{
+    font-family:'Playfair Display',serif;
+    color:#444;
+    font-weight:600;
+}
+
+#letter{
+    margin-top:20px;
+    font-size:18px;
+    line-height:1.9;
+    color:#333;
+    white-space:pre-line;
+    overflow-wrap: break-word;
+}
+
+.signature{
+    margin-top:30px;
+    font-family:'Playfair Display',serif;
+    font-size:20px;
+    color:#555;
+}
+
+.buttons{
+    margin-top:30px;
+    text-align:center;
+    display:none;
+}
+
+button{
+    padding:12px 26px;
+    border:none;
+    border-radius:25px;
+    margin:10px;
+    font-size:15px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.talk{
+    background:#f87171;
+    color:white;
+}
+
+.time{
+    background:#e5e7eb;
+}
+
+#musicBtn{
+    background:#fbbf24;
+    color:white;
+}
+
+button:hover{
+    transform:scale(1.05);
+}
+
+#response{
+    margin-top:15px;
+    text-align:center;
+    color:#b91c1c;
+    font-weight:500;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Hearts animation -->
+<script>
+for(let i=0;i<40;i++){
+    let heart = document.createElement("div");
+    heart.className="heart";
+    heart.style.left=Math.random()*100+"vw";
+    heart.style.animationDuration=(6+Math.random()*4)+"s";
+    heart.style.width=4+Math.random()*6+"px";
+    heart.style.height=heart.style.width;
+    document.body.appendChild(heart);
+}
+</script>
+
+<div class="paper">
+
+<h1>Dear Archana,</h1>
+
+<div id="letter"></div>
+
+<div class="signature">
+— From someone who truly cares
+</div>
+
+<div class="buttons" id="choices">
+    <button class="talk" onclick="talk()">We can talk</button>
+    <button class="time" onclick="time()">I need more time</button>
+</div>
+
+<div id="response"></div>
+
+<button id="musicBtn">Play Music 🎵</button>
+<audio id="music" loop>
+    <source src="Jeene Laga Hoon  Ramaiya Vastavaiya  Girish Kumar, Shruti Haasan  Atif Aslam  Shreya Goshal.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+
+</div>
+
+<script>
+/* Heartfelt typing effect with faster first line */
+const text =
+"I’m so sorry for hurting you, Archana. Please forgive me.\n\n" +
+"I know my actions caused you pain, and that was never my intention. I wish I could go back and handle things differently. I realize now how my words and behavior affected you, and I feel deeply regretful for it.\n\n" +
+"You mean a lot to me, and the last thing I ever wanted was to make you upset or feel unimportant. I understand if you need space, and I respect that completely. I am not expecting immediate forgiveness, but I want you to know that I am truly sorry from the bottom of my heart.\n\n" +
+"I’ve been reflecting a lot on myself and my mistakes. I am learning how to be more understanding, patient, and thoughtful, so I can be a better friend (or person) to you.\n\n" +
+"I miss the warmth and happiness we shared, and it hurts knowing that I caused a rift between us. I hope in time, we can rebuild trust, even if it takes a while. Your feelings matter to me more than anything.\n\n" +
+"If you ever feel ready to talk, I’ll be here to listen quietly and respectfully, without any expectations. Until then, I sincerely hope each day brings you peace, calm, and moments of happiness. You deserve nothing less.\n\n" +
+"I’m really sorry, love. I never meant to hurt you—you’re my everything, and I’ll do better because you deserve nothing less.\n\n" +
+"I’m truly sorry for the hurt I caused. You mean the world to me, and I hate knowing I made you feel anything less than loved. Please forgive me—I promise to learn from this and do better, because you and our bond are far too precious to risk. I love you, and I’ll keep proving it every day.I know I may have hurt you, and I’m truly sorry. Please unblock me—I just want the chance to make things right and be able to talk openly with you again.";
+
+let i = 0;
+function typing(){
+    let speed = 25; // default speed
+    if(i < 57) speed = 15; // faster for first line
+    if(i < text.length){
+        document.getElementById("letter").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typing, speed);
+    } else {
+        document.getElementById("choices").style.display="block";
+    }
+}
+typing();
+
+/* Apology buttons */
+function talk(){
+    document.getElementById("response").innerText =
+    "Thank you for being open to talking. That truly means a lot.";
+}
+function time(){
+    document.getElementById("response").innerText =
+    "I understand. Take all the time you need — I respect your feelings.";
+}
+
+/* Music play/pause button */
+const music = document.getElementById("music");
+const musicBtn = document.getElementById("musicBtn");
+
+musicBtn.addEventListener("click", () => {
+    if(music.paused){
+        music.play();
+        musicBtn.innerText = "Pause Music ⏸️";
+    } else {
+        music.pause();
+        musicBtn.innerText = "Play Music 🎵";
+    }
+});
+</script>
+
+</body>
+</html>
